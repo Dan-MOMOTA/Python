@@ -1,0 +1,46 @@
+block uart_reg_block { 
+    bytes 11;
+    register TXD @0X00 {
+        field data {
+            bits 8;
+            reset 0;
+            access wo;
+        }
+    }
+    register RXD @0X00 {
+        field data {
+            bits 8;
+            reset 0;
+            access ro;
+        }
+    }
+    register IER @0X04 {
+        field RDI {
+            bits 1;
+            reset 0;
+            access rw;
+        }
+    }
+    register   @None {
+        field TXE {
+            bits 1;
+            reset 0;
+            access rw;
+        }
+        field RXS {
+            bits 1;
+            reset 0;
+            access rw;
+        }
+        field MSI {
+            bits 1;
+            reset 0;
+            access rw;
+        }
+        field RESERV {
+            bits 4;
+            reset 0;
+            access ro;
+        }
+    }
+}
